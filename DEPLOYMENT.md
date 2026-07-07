@@ -22,14 +22,14 @@ git commit -m "feat: initial coming soon landing page"
 #    Go to https://github.com/new → name it "LandingPage_cosmetic" → Create repository
 #    Then copy the SSH or HTTPS URL and run:
 
-git remote add origin https://github.com/YOUR_USERNAME/LandingPage_cosmetic.git
+git remote add origin https://github.com/onenet786/Comming-Soon-Landing-Page-Cosmetics.git
 
 # 5. Push
 git branch -M main
 git push -u origin main
 ```
 
-> Replace `YOUR_USERNAME` with your actual GitHub username.
+> Repo: https://github.com/onenet786/Comming-Soon-Landing-Page-Cosmetics
 
 ---
 
@@ -63,7 +63,7 @@ Choose a clean location outside the default web root so aaPanel does not conflic
 
 ```bash
 cd /www/wwwroot
-git clone https://github.com/YOUR_USERNAME/LandingPage_cosmetic.git cosmeticerp
+git clone https://github.com/onenet786/Comming-Soon-Landing-Page-Cosmetics.git cosmeticerp
 cd cosmeticerp
 ```
 
