@@ -98,7 +98,7 @@ source ~/.bashrc
 ```bash
 cd /www/wwwroot/cosmeticerp
 node server.js
-# → CosmeticERP landing page running at http://localhost:3000
+# → CosmeticERP landing page running at http://localhost:3026
 ```
 
 Press `Ctrl+C` to stop after verifying it works.
@@ -138,7 +138,7 @@ pm2 delete cosmeticerp    # remove from PM2
 
 ### 2.7 — Configure aaPanel Reverse Proxy (expose on port 80/443)
 
-The Node.js app runs on port **3000**. aaPanel's Nginx will proxy public traffic to it.
+The Node.js app runs on port **3026**. aaPanel's Nginx will proxy public traffic to it.
 
 1. **Log in to aaPanel** → `Websites` → `Add Site`
 2. **Domain**: enter `vaelo.pk` (and optionally `www.vaelo.pk`)
@@ -151,7 +151,7 @@ Then configure the proxy:
 2. Go to **Reverse Proxy** tab → **Add Proxy**
 3. Fill in:
    - **Proxy name**: `cosmeticerp`
-   - **Target URL**: `http://127.0.0.1:3000`
+   - **Target URL**: `http://127.0.0.1:3026`
 4. Click **Submit**
 
 aaPanel will write the Nginx config automatically. Your site is now live on port 80.
@@ -173,11 +173,11 @@ If port 3000 conflicts with another app, set a different port:
 
 ```bash
 pm2 delete cosmeticerp
-PORT=4200 pm2 start server.js --name cosmeticerp
+PORT=XXXX pm2 start server.js --name cosmeticerp
 pm2 save
 ```
 
-Update the aaPanel proxy target URL to `http://127.0.0.1:4200`.
+Update the aaPanel proxy target URL to match the new port.
 
 ---
 
@@ -241,7 +241,7 @@ Then set up a simple webhook receiver (Node.js or a tool like [webhook](https://
 | Problem | Fix |
 |---|---|
 | `node: command not found` | Add `/www/server/node/bin` to PATH (see §2.4) |
-| Port 3000 already in use | Use `PORT=4200` or find the process with `lsof -i :3000` |
+| Port 3026 already in use | Use `PORT=XXXX` or find the process with `lsof -i :3026` |
 | Site shows aaPanel default page | Verify the reverse proxy is saved and Nginx reloaded |
 | SSL certificate fails | Make sure DNS A record for `vaelo.pk` points to your server IP |
 | Changes not showing | Run `git pull && pm2 restart cosmeticerp` |
