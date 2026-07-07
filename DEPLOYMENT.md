@@ -1,6 +1,6 @@
-# Deployment Guide — Cosmetic ERP Landing Page
+# Deployment Guide — Vaelo.pk Landing Page
 
-Host this page on a remote Linux server running **Node.js + aaPanel**, using **GitHub → git clone** workflow.
+Host this page at **vaelo.pk** on a remote Linux server running **Node.js + aaPanel**, using **GitHub → git clone** workflow.
 
 ---
 
@@ -141,7 +141,7 @@ pm2 delete cosmeticerp    # remove from PM2
 The Node.js app runs on port **3000**. aaPanel's Nginx will proxy public traffic to it.
 
 1. **Log in to aaPanel** → `Websites` → `Add Site`
-2. **Domain**: enter your domain (e.g. `comingsoon.yourdomain.com`)
+2. **Domain**: enter `vaelo.pk` (and optionally `www.vaelo.pk`)
 3. **Root directory**: can be anything — Nginx will proxy, not serve files directly
 4. Click **Submit**
 
@@ -243,5 +243,5 @@ Then set up a simple webhook receiver (Node.js or a tool like [webhook](https://
 | `node: command not found` | Add `/www/server/node/bin` to PATH (see §2.4) |
 | Port 3000 already in use | Use `PORT=4200` or find the process with `lsof -i :3000` |
 | Site shows aaPanel default page | Verify the reverse proxy is saved and Nginx reloaded |
-| SSL certificate fails | Make sure DNS A record points to your server IP |
+| SSL certificate fails | Make sure DNS A record for `vaelo.pk` points to your server IP |
 | Changes not showing | Run `git pull && pm2 restart cosmeticerp` |
