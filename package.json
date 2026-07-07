@@ -1,0 +1,14 @@
+{
+  "name": "cosmeticerp-coming-soon",
+  "version": "1.0.0",
+  "description": "Coming Soon landing page for Cosmetic ERP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": ["cosmetic", "erp", "coming-soon", "landing-page"],
+  "license": "MIT"
+}
